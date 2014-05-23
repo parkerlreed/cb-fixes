@@ -19,14 +19,12 @@ else
         echo "options ath9k nohwcrypt=1 blink=1 btcoex_enable=1 enable_diversity=1 | sudo tee /etc/modprobe.d/ath9k.conf
 fi
 
-
 #-----------------------------------------------------------------------------------------------------------------------------------
 # To keep Ubuntu and derivatives from blocking i2c-i801
 if [[ -f /etc/modprobe.d/blacklist.conf ]];
 then
         sed 's/blacklist i2c_i801/#blacklist i2c_i801/g' -i /etc/modprobe.d/blacklist.conf
 fi
-
 
 #-----------------------------------------------------------------------------------------------------------------------------------
 # To fix touchpad modules not loading in the right order
