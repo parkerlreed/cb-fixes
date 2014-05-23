@@ -14,9 +14,9 @@ sudo sed 's/, ENV{UPOWER_BATTERY_TYPE}=\"unifying\"//g' -i /etc/udev/rules.d/95-
 #-----------------------------------------------------------------------------------------------------------------------------------
 if [ $(echo "$kernelver >= 3.12" | bc -l) ];
 then
-        echo "options ath9k nohwcrypt=1 blink=1 btcoex_enable=1 bt_ant_diversity=1 | sudo tee /etc/modprobe.d/ath9k.conf
+        echo "options ath9k nohwcrypt=1 blink=1 btcoex_enable=1 bt_ant_diversity=1" | sudo tee /etc/modprobe.d/ath9k.conf
 else
-        echo "options ath9k nohwcrypt=1 blink=1 btcoex_enable=1 enable_diversity=1 | sudo tee /etc/modprobe.d/ath9k.conf
+        echo "options ath9k nohwcrypt=1 blink=1 btcoex_enable=1 enable_diversity=1" | sudo tee /etc/modprobe.d/ath9k.conf
 fi
 
 #-----------------------------------------------------------------------------------------------------------------------------------
