@@ -27,6 +27,6 @@ then
 fi
 
 #-----------------------------------------------------------------------------------------------------------------------------------
-# To fix touchpad modules not loading in the right order
+# To fix touchpad modules not loading in the right order. This also makes the touchpad resume correctly from sleep.
 echo "softdep chromeos_laptop pre: i2c-core i2c-i801 cyapa" | sudo tee /etc/modprobe.d/chromeos_laptop.conf
 
