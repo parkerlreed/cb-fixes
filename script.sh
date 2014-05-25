@@ -42,17 +42,17 @@ function touchorder(){
 # Various power save features for Intel GPUs
 function gpusave(){
 	read -p "Would you like to have a verbose boot? " yn
-    case $yn in
-        [Yy]* ) quiet="quiet";;
-        [Nn]* ) ;;
-        * ) echo "Please answer y or n.";;
-    esac
-	read -p "Do you want to keep your splash screen on boot?" yn
-    case $yn in
-        [Yy]* ) splash="splash";;
-        [Nn]* ) ;;
-        * ) echo "Please answer y or n.";;
-    esac
+	case $yn in
+		[Yy]* ) quiet="quiet";;
+		[Nn]* ) ;;
+		* ) echo "Please answer y or n.";;
+	esac
+	read -p "Do you want to keep your splash screen on boot? " yn
+	case $yn in
+		[Yy]* ) splash="splash";;
+		[Nn]* ) ;;
+		* ) echo "Please answer y or n.";;
+	esac
 	sudo sed 's/GRUB_CMDLINE_LINUX_DEFAULT=".*"/GRUB_CMDLINE_LINUX_DEFAULT="'$quiet' '$splash' i915.lvds_downclock=1 i915.i915_enable_fbc=1 i915.i915_enable_rc6=1 drm.vblankoffdelay=1"/' -i /etc/default/grub
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
