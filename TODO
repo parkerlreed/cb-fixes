@@ -1,6 +1,7 @@
 Just some fixes that have been found but have yet to be included in the main script
 
 echo 10 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
+echo Y | sudo tee /sys/module/snd_hda_intel/parameters/power_save_controller
 
 Maybe include some from here http://paste.pm/h06.sh Contents follow in case it goes down
 
