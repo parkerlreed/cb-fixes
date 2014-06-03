@@ -57,8 +57,4 @@ function gpusave(){
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-unifying
-wififix
-unblocktouch
-touchorder
-gpusave
+$1
