@@ -3,6 +3,29 @@ Just some fixes that have been found but have yet to be included in the main scr
 echo 10 | sudo tee /sys/module/snd_hda_intel/parameters/power_save
 echo Y | sudo tee /sys/module/snd_hda_intel/parameters/power_save_controller
 
+driconf file
+
+<driconf>
+    <device screen="0" driver="i965">
+        <application name="Default">
+            <option name="force_s3tc_enable" value="true" />
+            <option name="no_rast" value="false" />
+            <option name="clamp_max_samples" value="-1" />
+            <option name="always_flush_cache" value="false" />
+            <option name="shader_precompile" value="true" />
+            <option name="hiz" value="true" />
+            <option name="always_flush_batch" value="false" />
+            <option name="bo_reuse" value="1" />
+            <option name="force_glsl_extensions_warn" value="false" />
+            <option name="disable_throttling" value="false" />
+            <option name="disable_glsl_line_continuations" value="false" />
+            <option name="disable_blend_func_extended" value="false" />
+            <option name="vblank_mode" value="3" />
+            <option name="disable_derivative_optimization" value="false" />
+        </application>
+    </device>
+</driconf>
+
 Maybe include some from here http://paste.pm/h06.sh Contents follow in case it goes down
 
 # Autosuspend for USB HD WebCam [SuYin]
