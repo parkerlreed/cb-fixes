@@ -57,4 +57,11 @@ function gpusave(){
 	sudo grub-mkconfig -o /boot/grub/grub.cfg
 }
 
+#-----------------------------------------------------------------------------------------------------------------------------------
+# Fix for the C710 SD card reader (Also applies to anything with a Broadcom ethernet/SD combo chip)
+
+function sdfix(){
+	echo "options sdhci debug_quirks=0x40 debug_quirks2=0x4" | sudo tee /etc/modprobe.d/sdhci.conf
+}
+
 $1
